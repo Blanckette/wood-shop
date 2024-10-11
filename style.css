@@ -26,6 +26,11 @@ header {
         text-transform: uppercase;
         font-weight: 900;
     }
+
+    & .menu {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .hero {
@@ -75,10 +80,17 @@ header {
     & .project-item {
         padding-top: 1rem;
         display: flex;
-        width: 100%;
+        flex-direction: column-reverse;
+
+        & .project-description {
+            min-width: 0;
+            width: 100%;
+        }
 
         & .project-title {
             font-size: 3.2rem;
+            min-width: 0;
+            max-width: 100%;
         }
 
         & .project-text {
@@ -99,16 +111,19 @@ header {
         & .project-link:hover {
             background-color: black;
             color: var(--light-grey);
+            transition: 0.3s ease-out;
         }
 
         & .project-img-wrapper {
+            display: flex;
             width: 100%;
-            padding: 1rem;
+            padding-bottom: 1rem;
 
             & .project-img {
-                height: 16rem;
-                width: 16rem;
-                padding: 1rem;
+                min-width: 0;
+                width: 50vw;
+                height: 50vw;
+                object-fit: cover;
             }
         }
     }
@@ -169,6 +184,10 @@ header {
 
 .pass-order {
     padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0.5rem;
 
     & .order-img {
         height: 8rem;
@@ -201,6 +220,16 @@ header {
             text-transform: uppercase;
             padding: 1rem;
             border-radius: 50px;
+            border: solid;
+            border-color: black;
+            border-width: 0.1rem;
+        }
+
+        & .order-link:hover {
+            background-color: var(--light-grey);
+            color: black;
+            transform: scale(1.1);
+            transition: 0.3s ease-out;
         }
     }
 }
